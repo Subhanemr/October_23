@@ -89,13 +89,13 @@ namespace _23_10_23
 
             List<Exam> exams = new List<Exam>();
 
-            exams.Add(new Exam { Subject = "Math", ExamDuration = 3, StartDate = DateTime.Now.AddHours(-1) });
-            exams.Add(new Exam { Subject = "History", ExamDuration = 2, StartDate = DateTime.Now.AddHours(-5) });
+            exams.Add(new Exam { Subject = "Math", ExamDuration = 3, StartDate = DateTime.Now.AddDays(7) });
+            exams.Add(new Exam { Subject = "History", ExamDuration = 2, StartDate = DateTime.Now.AddHours(2) });
             exams.Add(new Exam { Subject = "Chemistry", ExamDuration = 1, StartDate = DateTime.Now.AddHours(1) });
             exams.Add(new Exam { Subject = "Physics", ExamDuration = 4, StartDate = DateTime.Now.AddHours(-2) });
 
             Console.WriteLine("Exams due in the last 1 week:");
-            FilteredExams(exams, exam => exam.EndDate >= DateTime.Now && exam.EndDate <= DateTime.Now.AddDays(7));
+            FilteredExams(exams, exam => exam.EndDate >= DateTime.Now && exam.EndDate >= DateTime.Now.AddDays(7));
 
             Console.WriteLine("\nExams lasting more than 2 hours:");
             FilteredExams(exams, exam => exam.ExamDuration > 2);
@@ -110,15 +110,15 @@ namespace _23_10_23
             #region Task 2 V2 
             List<Exam> exams2 = new List<Exam>();
 
-            exams.Add(new Exam { Subject = "Math", ExamDuration = 3, StartDate = DateTime.Now.AddHours(-1) });
-            exams.Add(new Exam { Subject = "History", ExamDuration = 2, StartDate = DateTime.Now.AddHours(-5) });
-            exams.Add(new Exam { Subject = "Chemistry", ExamDuration = 1, StartDate = DateTime.Now.AddHours(1) });
-            exams.Add(new Exam { Subject = "Physics", ExamDuration = 4, StartDate = DateTime.Now.AddHours(-2) });
+            exams2.Add(new Exam { Subject = "Math", ExamDuration = 3, StartDate = DateTime.Now.AddDays(7) });
+            exams2.Add(new Exam { Subject = "History", ExamDuration = 2, StartDate = DateTime.Now.AddHours(2) });
+            exams2.Add(new Exam { Subject = "Chemistry", ExamDuration = 1, StartDate = DateTime.Now.AddHours(1) });
+            exams2.Add(new Exam { Subject = "Physics", ExamDuration = 4, StartDate = DateTime.Now.AddHours(-2) });
 
             Console.WriteLine("Exams due in the last 1 week:");
             foreach (var exam in exams2)
             {
-                if (exam.EndDate >= DateTime.Now && exam.EndDate <= DateTime.Now.AddDays(7))
+                if (exam.EndDate >= DateTime.Now && exam.EndDate >= DateTime.Now.AddDays(7))
                 {
                     DisplayExam(exam);
                 }
